@@ -18,7 +18,7 @@ goog.inherits(SmartTv.Application, SmartTv.BaseApplication);
 SmartTv.Application.prototype.home = function() {
 	this.clearHistory();
 	var homeScene = this.getLayerManager().getLayer('home');
-	return this.getSceneOpener().open(homeScene, function() {
+	return this.getLayerManager().open(homeScene, function() {
 		// Set home scene data here
 	});
 };
