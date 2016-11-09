@@ -23,6 +23,10 @@ SmartTv.Application.prototype.home = function() {
 	});
 };
 
+SmartTv.Application.prototype.video = function() {
+  var videoScene = this.getLayerManager().getLayer('video');
+  return this.getLayerManager().open(videoScene);
+};
 
 /** @inheritDoc */
 SmartTv.Application.prototype.onStart = function() {

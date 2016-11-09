@@ -5,6 +5,8 @@ goog.require('SmartTv.scenes.templates.home.home');
 goog.require('zb.ui.BaseList');
 goog.require('zb.xhr.simple');
 
+goog.require('zb.device.platforms.webos.HTML5Video');
+
 /**
  * @constructor
  * @extends {zb.layers.CuteScene}
@@ -49,5 +51,11 @@ SmartTv.scenes.Home.prototype._renderTemplate = function() {
 SmartTv.scenes.Home.prototype._templateResult;
 
 zb.ui.BaseList.prototype.mouseClick = function(data) {
-  alert('click');
+  app.video();
+
+  var video = new zb.device.platforms.common.HTML5Video;
+  var videoUrl = 'http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_2mb.mp4';
+
+  video.play(videoUrl);
+  app.showVideo();
 };
