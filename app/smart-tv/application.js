@@ -2,7 +2,6 @@ goog.provide('SmartTv.Application');
 goog.require('SmartTv.BaseApplication');
 
 
-
 /**
  * @constructor
  * @extends {SmartTv.BaseApplication}
@@ -25,7 +24,9 @@ SmartTv.Application.prototype.home = function() {
 
 SmartTv.Application.prototype.video = function() {
   var videoScene = this.getLayerManager().getLayer('video');
-  return this.getLayerManager().open(videoScene);
+  return this.getLayerManager().open(videoScene, function() {
+
+  });
 };
 
 /** @inheritDoc */
