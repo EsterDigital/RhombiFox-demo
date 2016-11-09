@@ -5,6 +5,7 @@ zb.packageInfo = {
 	"version": "0.1.0",
 	"dependencies": {
 		"zombiebox": "^0.1.3",
-		"zombiebox-extension-ui": "^0.3.2"
+		"zombiebox-extension-ui": "^0.3.2",
+		"zombiebox-platform-webos": "0.0.15"
 	}
 };
