@@ -2,7 +2,7 @@ goog.provide('SmartTv.scenes.Home');
 goog.require('zb.layers.CuteScene');
 goog.require('SmartTv.scenes.templates.home.home');
 
-goog.require('zb.ui.ScrollList');
+goog.require('zb.ui.BaseList');
 goog.require('zb.xhr.simple');
 
 goog.require('zb.device.platforms.common.HTML5Video');
@@ -27,24 +27,26 @@ SmartTv.scenes.Home = function() {
 
       var res = [];
 
-      items.forEach(function(item) {
-        var node = zb.html.node('div');
+      for(var j = 0; j < 10; j++){
+        items.forEach(function(item) {
+          var node = zb.html.node('div');
 
-        if(item.images.small) {
-          var img = zb.html.node('img', 'video-thumb');
-          img.setAttribute('src', item.images.small);
-          node.appendChild(img);
-        }
+          if(item.images.small) {
+            var img = zb.html.node('img', 'video-thumb');
+            img.setAttribute('src', item.images.small);
+            node.appendChild(img);
+          }
 
-        var title = zb.html.node('span', 'video-title', item.name);
-        node.appendChild(title);
+          var title = zb.html.node('span', 'video-title', item.name);
+          node.appendChild(title);
 
-        res.push(node);
+          res.push(node);
 
-        fullList.push({
-          id: item.id
+          fullList.push({
+            id: item.id
+          });
         });
-      });
+      }
 
       appendScrollList(self, res);
     })
@@ -89,12 +91,19 @@ zb.ui.BaseListItem.prototype._renderData = function() {
 
 var appendScrollList = function(scene, items) {
   var dataList = new zb.ui.DataList(items);
-  var scrollList = new zb.ui.ScrollList({ isVertical: true, source: dataList });
+  var list = new zb.ui.BaseList({
+    isVertical: false,
+    source: dataList
+  }, {
+    padding: 1
+  });
 
-  scene.appendWidget(scrollList);
-  scene.getContainer().appendChild(scrollList.getContainer());
+  scene.appendWidget(list);
+  scene.getContainer().appendChild(list.getContainer());
 
-  scrollList.on(scrollList.EVENT_CLICK, selectListItem);
+  list.updateView();
+
+  list.on(list.EVENT_CLICK, selectListItem);
 };
 
 var selectListItem = function(data) {

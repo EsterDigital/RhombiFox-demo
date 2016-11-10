@@ -8,15 +8,17 @@
 
 .s-home .w-base-list__slider {
   height: 100%;
+  width: 100%;
 }
 
 .s-home .w-base-list__slider .w-base-list__item {
-    color: #fff;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 15px;
-    padding-left: 35px;
-    position: relative;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 15px;
+  padding-left: 35px;
+  position: relative;
+  width: 30%;
 }
 
 .s-home .w-base-list__slider .w-base-list__item._active {
