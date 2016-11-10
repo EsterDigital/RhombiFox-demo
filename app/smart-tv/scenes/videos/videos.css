@@ -54,11 +54,13 @@
 
 .zb-body .s-videos {
   height: auto;
+  background-color: transparent;
   position: absolute;
-  left: 0;
-  top: 50%;
+  width: 80%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
+  top: 50%;
+  left: 10%;
 }
