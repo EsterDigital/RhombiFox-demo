@@ -1,6 +1,7 @@
 goog.provide('SmartTv.scenes.Home');
 goog.require('zb.layers.CuteScene');
 goog.require('SmartTv.scenes.templates.home.home');
+goog.require('zb.ui.BaseList');
 
 var categories = [
   {
