@@ -26,7 +26,18 @@ SmartTv.scenes.Home = function() {
       var res = [];
 
       items.forEach(function(item) {
-        res.push(item.name);
+        var node = zb.html.node('div');
+
+        if(item.images.small) {
+          var img = zb.html.node('img');
+          img.setAttribute('src', item.images.small);
+          node.appendChild(img);
+        }
+
+        var title = zb.html.node('span', '', item.name);
+        node.appendChild(title);
+
+        res.push(node);
 
         fullList.push({
           id: item.id
@@ -67,6 +78,11 @@ zb.device.platforms.common.HTML5Video.prototype.bindEvents = function() {
     app.hideVideo();
     app.back();
   });
+};
+
+zb.ui.BaseListItem.prototype._renderData = function() {
+  var data = this._data === null ? '' : this._data;
+  this._container.appendChild(data);
 };
 
 var appendScrollList = function(scene, items) {
