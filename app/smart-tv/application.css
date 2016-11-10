@@ -11,28 +11,3 @@ html, body {
   background: #2B3035;
   color: #fff;
 }
-
-.w-base-list._is-vertical {
-  height: 100%;
-}
-
-.w-base-list__wrap {
-  height: 100%;
-}
-
-.w-base-list__slider {
-  height: 100%;
-}
-
-.w-base-list__slider .w-base-list__item {
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-  height: 8%;
-  padding-left: 35px;
-  padding-top: 2%;
-}
-
-.w-base-list__slider .w-base-list__item._active {
-  background: #c76161;
-}

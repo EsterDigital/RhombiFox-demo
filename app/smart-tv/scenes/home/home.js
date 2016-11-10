@@ -17,6 +17,8 @@ var video;
 SmartTv.scenes.Home = function() {
   goog.base(this);
 
+  this._addContainerClass('s-home');
+
   var self = this;
 
   zb.xhr.simple.send(zb.http.Method.GET, 'http://webcaster.pro/api/firefly/events.json', {}, {})
@@ -29,12 +31,12 @@ SmartTv.scenes.Home = function() {
         var node = zb.html.node('div');
 
         if(item.images.small) {
-          var img = zb.html.node('img');
+          var img = zb.html.node('img', 'video-thumb');
           img.setAttribute('src', item.images.small);
           node.appendChild(img);
         }
 
-        var title = zb.html.node('span', '', item.name);
+        var title = zb.html.node('span', 'video-title', item.name);
         node.appendChild(title);
 
         res.push(node);
