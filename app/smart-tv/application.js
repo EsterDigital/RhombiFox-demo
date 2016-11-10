@@ -32,5 +32,5 @@ SmartTv.Application.prototype.videos = function() {
 /** @inheritDoc */
 SmartTv.Application.prototype.onStart = function() {
 	// login, splashscreen, timeout, etc.
-	this.videos();
+	this.home();
 };

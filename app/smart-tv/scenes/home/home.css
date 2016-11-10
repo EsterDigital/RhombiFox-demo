@@ -1,0 +1,23 @@
+.s-home .w-base-list__wrap {
+  height: 100%;
+}
+
+.s-home .w-base-list__slider {
+  height: 100%;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.s-home .w-base-list__slider .w-base-list__item {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 15px;
+  padding-left: 35px;
+  position: relative;
+  width: 30%;
+}
+
+.s-home .w-base-list__slider .w-base-list__item._active {
+  background: #c76161;
+}
