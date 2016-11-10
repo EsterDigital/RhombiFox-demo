@@ -1,5 +1,5 @@
 goog.provide('SmartTv.scenes.templates.home.home');
-goog.require('zb.ui.ScrollList');
+
 
 /**
  * @typedef {Object}
@@ -9,8 +9,7 @@ SmartTv.scenes.templates.home.HomeIn;
 
 /**
  * @typedef {{
- *     root: DocumentFragment,
- *     list: zb.ui.ScrollList
+ *     root: DocumentFragment
  * }}
  */
 SmartTv.scenes.templates.home.HomeOut;
@@ -24,8 +23,7 @@ SmartTv.scenes.templates.home.HomeOut;
 SmartTv.scenes.templates.home.home = function(opt_templateParams, opt_options) {
 	var templatesData = {};
 	var exports = {
-		root: null,
-		list: null
+		root: null
 	};
 	/**
 	 * @param value
@@ -41,22 +39,13 @@ SmartTv.scenes.templates.home.home = function(opt_templateParams, opt_options) {
 					cuteJS.onDuplicateExport(key);
 				}
 				break;
-			case 'list':
-				if (!exports.list) {
-					exports.list = value;
-				} else {
-					cuteJS.onDuplicateExport(key);
-				}
-				break;
 			default:
 				cuteJS.onUnknownKey(key);
 				break;
 		}
 	};
 	var __p = '';
-	__p += '\n' +
-	 cuteJS.include('component', zb.ui.ScrollList,  { isVertical: true }, "list", templatesData) +
-	'';
+	__p += '\n';
 	
 	return cuteJS.buildResult(__p, templatesData, exportFunction, exports, opt_options);
 };

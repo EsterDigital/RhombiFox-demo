@@ -2,7 +2,7 @@ goog.provide('SmartTv.scenes.Home');
 goog.require('zb.layers.CuteScene');
 goog.require('SmartTv.scenes.templates.home.home');
 
-goog.require('zb.ui.BaseList');
+goog.require('zb.ui.ScrollList');
 goog.require('zb.xhr.simple');
 
 goog.require('zb.device.platforms.webos.HTML5Video');
@@ -33,8 +33,7 @@ SmartTv.scenes.Home = function() {
         });
       }
 
-      var source = new zb.ui.DataList(res);
-      self._exported.list.setSource(source);
+      appendScrollList(self, res);
     })
     .catch(function(xhr) {
       console.error(xhr);
@@ -56,7 +55,17 @@ SmartTv.scenes.Home.prototype._renderTemplate = function() {
 SmartTv.scenes.Home.prototype._templateResult;
 
 
-zb.ui.BaseList.prototype.mouseClick = function(data) {
+var appendScrollList = function(scene, items) {
+  var dataList = new zb.ui.DataList(items);
+  var scrollList = new zb.ui.ScrollList({ isVertical: true, source: dataList });
+
+  scene.appendWidget(scrollList);
+  scene.getContainer().appendChild(scrollList.getContainer());
+
+  scrollList.on(scrollList.EVENT_CLICK, selectListItem);
+};
+
+var selectListItem = function(data) {
   var localIndex = this.getLocalIndex();
   var itemId = fullList[localIndex].id;
 
@@ -77,5 +86,4 @@ zb.ui.BaseList.prototype.mouseClick = function(data) {
     .catch(function(xhr) {
       console.error(xhr);
     })
-
 };
