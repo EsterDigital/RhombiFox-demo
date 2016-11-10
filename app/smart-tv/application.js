@@ -22,9 +22,9 @@ SmartTv.Application.prototype.home = function() {
 	});
 };
 
-SmartTv.Application.prototype.video = function() {
-  var videoScene = this.getLayerManager().getLayer('video');
-  return this.getLayerManager().open(videoScene, function() {
+SmartTv.Application.prototype.videos = function() {
+  var videosScene = this.getLayerManager().getLayer('videos');
+  return this.getLayerManager().open(videosScene, function() {
 
   });
 };
@@ -32,5 +32,5 @@ SmartTv.Application.prototype.video = function() {
 /** @inheritDoc */
 SmartTv.Application.prototype.onStart = function() {
 	// login, splashscreen, timeout, etc.
-	this.home();
+	this.videos();
 };

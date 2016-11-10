@@ -1,10 +1,10 @@
-goog.provide('SmartTv.scenes.templates.video.video');
+goog.provide('SmartTv.scenes.templates.videos.videos');
 
 
 /**
  * @typedef {Object}
  */
-SmartTv.scenes.templates.video.VideoIn;
+SmartTv.scenes.templates.videos.VideosIn;
 
 
 /**
@@ -12,15 +12,15 @@ SmartTv.scenes.templates.video.VideoIn;
  *     root: DocumentFragment
  * }}
  */
-SmartTv.scenes.templates.video.VideoOut;
+SmartTv.scenes.templates.videos.VideosOut;
 
 
 /**
  * @param {*=} opt_templateParams
  * @param {?cuteJS.TemplateOptions=} opt_options
- * @return {SmartTv.scenes.templates.video.VideoOut}
+ * @return {SmartTv.scenes.templates.videos.VideosOut}
  */
-SmartTv.scenes.templates.video.video = function(opt_templateParams, opt_options) {
+SmartTv.scenes.templates.videos.videos = function(opt_templateParams, opt_options) {
 	var templatesData = {};
 	var exports = {
 		root: null
@@ -28,7 +28,7 @@ SmartTv.scenes.templates.video.video = function(opt_templateParams, opt_options)
 	/**
 	 * @param value
 	 * @param {string} key
-	 * @param {SmartTv.scenes.templates.video.VideoOut} exports
+	 * @param {SmartTv.scenes.templates.videos.VideosOut} exports
 	 */
 	var exportFunction = function(value, key, exports) {
 		switch (key) {

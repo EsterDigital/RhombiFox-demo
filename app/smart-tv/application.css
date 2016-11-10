@@ -11,6 +11,11 @@ html, body {
 .zb-layer-container {
   color: #fff;
 }
+
+.zb-layer-container._transparent {
+  display: none;
+}
+
 .zb-body {
   width: 100%;
   height: 100%;
