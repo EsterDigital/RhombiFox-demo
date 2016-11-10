@@ -14,4 +14,4 @@
 
 1. Install [webOS SDK](http://developer.lge.com/webOSTV/sdk/web-sdk/) to /usr/local/share/webOS_TV_SDK/
 
-2. Run `./build_webos` for building .ipk package.
+2. Run `./build_webos.sh` for building .ipk package.
