@@ -85,11 +85,6 @@ zb.device.platforms.common.HTML5Video.prototype.bindEvents = function() {
   });
 };
 
-zb.ui.BaseListItem.prototype._renderData = function() {
-  var data = this._data === null ? '' : this._data;
-  this._container.appendChild(data);
-};
-
 var appendScrollList = function(scene, items) {
   var dataList = new zb.ui.DataList(items);
   var list = new zb.ui.BaseList({
