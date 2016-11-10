@@ -45,7 +45,7 @@ SmartTv.scenes.templates.home.home = function(opt_templateParams, opt_options) {
 		}
 	};
 	var __p = '';
-	__p += '\n';
+	__p += '';
 	
 	return cuteJS.buildResult(__p, templatesData, exportFunction, exports, opt_options);
 };

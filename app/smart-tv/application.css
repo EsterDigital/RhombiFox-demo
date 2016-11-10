@@ -3,6 +3,10 @@ html, body {
   font-family: Helvetica, Arial, Verdana, Sans-Serif;
 }
 
+.zb-video-container {
+  background: black;
+}
+
 .zb-layer-container {
   background: #2B3035;
   color: #fff;
