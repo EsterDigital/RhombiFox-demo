@@ -5,9 +5,10 @@ goog.require('SmartTv.scenes.templates.home.home');
 goog.require('zb.ui.ScrollList');
 goog.require('zb.xhr.simple');
 
-goog.require('zb.device.platforms.webos.HTML5Video');
+goog.require('zb.device.platforms.common.HTML5Video');
 
 var fullList = [];
+var video;
 
 /**
  * @constructor
@@ -22,16 +23,15 @@ SmartTv.scenes.Home = function() {
     .then(function(xhr) {
       var items = JSON.parse(xhr.responseText);
 
-      console.log(items.length);
-
       var res = [];
-      for(var i = 0, length = items.length; i < length; i++) {
-        res.push(items[i].name);
+
+      items.forEach(function(item) {
+        res.push(item.name);
 
         fullList.push({
-          id: items[i].id
+          id: item.id
         });
-      }
+      });
 
       appendScrollList(self, res);
     })
@@ -39,6 +39,8 @@ SmartTv.scenes.Home = function() {
       console.error(xhr);
     })
 
+  video = new zb.device.platforms.common.HTML5Video;
+  video.bindEvents();
 };
 goog.inherits(SmartTv.scenes.Home, zb.layers.CuteScene);
 
@@ -54,6 +56,18 @@ SmartTv.scenes.Home.prototype._renderTemplate = function() {
  */
 SmartTv.scenes.Home.prototype._templateResult;
 
+
+zb.device.platforms.common.HTML5Video.prototype.bindEvents = function() {
+  this.on(this.EVENT_PAUSE, function() {
+    app.hideVideo();
+    app.back();
+  });
+
+  this.on(this.EVENT_ERROR, function() {
+    app.hideVideo();
+    app.back();
+  });
+};
 
 var appendScrollList = function(scene, items) {
   var dataList = new zb.ui.DataList(items);
@@ -73,15 +87,10 @@ var selectListItem = function(data) {
     .then(function(xhr) {
       var json = JSON.parse(xhr.responseText);
 
-      if (!json['m3u8_url']) {
-        alert('Video url not found');
-        return;
-      }
-
       app.video();
-      var video = new zb.device.platforms.common.HTML5Video;
-      video.play(json['m3u8_url']);
       app.showVideo();
+
+      video.play(json['m3u8_url']);
     })
     .catch(function(xhr) {
       console.error(xhr);
