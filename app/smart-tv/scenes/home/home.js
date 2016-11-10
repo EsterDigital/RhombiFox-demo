@@ -48,6 +48,7 @@ SmartTv.scenes.Home = function() {
         });
       }
 
+      appendListInfo(self, items);
       appendScrollList(self, res);
     })
     .catch(function(xhr) {
@@ -105,6 +106,17 @@ var appendScrollList = function(scene, items) {
 
   list.on(list.EVENT_CLICK, selectListItem);
 };
+
+var appendListInfo = function(scene, data) {
+  var node = zb.html.node('div');
+  var categoryName = new zb.html.node('h1','category-name','food');
+  var categorySize = new zb.html.node('p','category-size', data.length + ' video')
+  node.appendChild(categoryName);
+  node.appendChild(categorySize);
+
+  scene.getContainer().appendChild(node);
+};
+
 
 var selectListItem = function(data) {
   var localIndex = this.getLocalIndex();

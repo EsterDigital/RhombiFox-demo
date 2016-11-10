@@ -1,4 +1,5 @@
 html, body {
+  background: #2B3035;
   color: #fff;
   font-family: Helvetica, Arial, Verdana, Sans-Serif;
 }
@@ -8,6 +9,14 @@ html, body {
 }
 
 .zb-layer-container {
-  background: #2B3035;
   color: #fff;
+}
+.zb-body {
+  width: 100%;
+  height: 100%;
+}
+.zb-body > .zb-layer-container {
+  width: 80%;
+  margin: 0 auto;
+  left: 10%;
 }
