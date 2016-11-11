@@ -100,6 +100,16 @@ var appendScrollList = function(scene, items) {
 
   list.updateView();
 
+  list._moveRight();
+
+  var isMoved = false;
+  list.on(list.EVENT_AFTER_MOVE, function() {
+    if(isMoved) return;
+
+    list._moveLeft();
+    isMoved = true;
+  })
+
   list.on(list.EVENT_CLICK, selectListItem);
 };
 
