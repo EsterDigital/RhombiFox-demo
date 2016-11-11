@@ -20,10 +20,20 @@
   padding-left: 35px;
   position: relative;
   width: 30%;
+  -webkit-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -o-transform: scale(1, 1);
+  transform: scale(1, 1);
+  -webkit-transition: transform .3s;
+  -o-transition: transform .3s;
+  transition: transform .3s;
 }
 
 .s-videos .w-base-list__slider .w-base-list__item._active {
-  background: #c76161;
+  -webkit-transform: scale(1.05, 1.05);
+  -ms-transform: scale(1.05, 1.05);
+  -o-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
 }
 
 .s-videos .w-base-list__slider .w-base-list__item .video-thumb {
@@ -51,16 +61,21 @@
   font-size: 24px;
   margin-top: 20px;
 }
-
-.zb-body .s-videos {
+.videos-body .zb-body > .zb-layer-container {
+  background-image: url(../../img/bg-cat-food.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.videos-body .s-videos {
   height: auto;
   background-color: transparent;
   position: absolute;
-  width: 80%;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   top: 50%;
-  left: 10%;
+  left: 0;
+  padding: 0 10%;
+  box-sizing: border-box;
 }

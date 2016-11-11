@@ -26,8 +26,7 @@ var categories = [
 SmartTv.scenes.Home = function() {
   goog.base(this);
   this._addContainerClass('s-home');
-
-
+  this._layerName = "home";
   var items = [];
 
   categories.forEach(function(category) {

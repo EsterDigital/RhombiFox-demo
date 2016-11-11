@@ -17,6 +17,7 @@ var video;
 SmartTv.scenes.Videos = function() {
 	goog.base(this);
 	this._addContainerClass('s-videos');
+  this._layerName = "videos";
 
   var self = this;
 
