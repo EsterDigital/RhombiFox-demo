@@ -29,6 +29,11 @@ SmartTv.Application.prototype.videos = function() {
   });
 };
 
+zb.ui.BaseListItem.prototype._renderData = function() {
+  var data = this._data === null ? '' : this._data;
+  this._container.appendChild(data);
+};
+
 /** @inheritDoc */
 SmartTv.Application.prototype.onStart = function() {
 	// login, splashscreen, timeout, etc.
