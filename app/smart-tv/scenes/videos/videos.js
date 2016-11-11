@@ -33,7 +33,7 @@ SmartTv.scenes.Videos = function() {
 
           if(item.images.small) {
             var img = zb.html.node('img', 'video-thumb');
-            img.setAttribute('src', item.images.small);
+            img.setAttribute('src', item.images.big);
             node.appendChild(img);
           }
 
