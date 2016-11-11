@@ -6,16 +6,16 @@ goog.require('zb.ui.BaseList');
 var categories = [
   {
     name: 'Food',
-    background: '',
+    background: '/app/smart-tv/img/food-cat.jpg',
     sceneTarget: 'videos'
   },
   {
     name: 'Recipes',
-    background: ''
+    background: '/app/smart-tv/img/recipes-cat.jpg'
   },
   {
     name: 'Recommended',
-    background: ''
+    background: '/app/smart-tv/img/recom-cat.jpg'
   }
 ];
 
@@ -30,8 +30,12 @@ SmartTv.scenes.Home = function() {
   var items = [];
 
   categories.forEach(function(category) {
+    var node = zb.html.node('div');
     var title = zb.html.node('span', 'category-title', category.name);
-    items.push(title);
+    node.style.backgroundImage = "url("+category.background+")";
+    node.classList.add('category-container');
+    node.appendChild(title);
+    items.push(node);
   });
 
   var dataList = new zb.ui.DataList(items);
