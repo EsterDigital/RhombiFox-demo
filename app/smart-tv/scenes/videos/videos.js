@@ -121,6 +121,11 @@ var selectListItem = function(data) {
     .then(function(xhr) {
       var json = JSON.parse(xhr.responseText);
 
+      if(!json['m3u8_url']) {
+        app.payment();
+        return;
+      }
+
       app.showVideo();
 
       video.play(json['m3u8_url']);

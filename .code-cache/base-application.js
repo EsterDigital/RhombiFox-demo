@@ -3,6 +3,7 @@ goog.require('zb.Application');
 
 // load scenes
 goog.require('SmartTv.scenes.Home');
+goog.require('SmartTv.scenes.Payment');
 goog.require('SmartTv.scenes.Videos');
 
 // load platforms
@@ -48,6 +49,7 @@ SmartTv.BaseApplication.prototype.isDevicePc = function() {
 SmartTv.BaseApplication.prototype._setupScenes = function() {
 	goog.base(this, '_setupScenes');
 	app.addScene(new SmartTv.scenes.Home(), 'home');
+	app.addScene(new SmartTv.scenes.Payment(), 'payment');
 	app.addScene(new SmartTv.scenes.Videos(), 'videos');
 };
 

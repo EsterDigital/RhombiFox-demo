@@ -27,6 +27,13 @@ SmartTv.Application.prototype.videos = function() {
   });
 };
 
+SmartTv.Application.prototype.payment = function() {
+  var paymentScene = this.getLayerManager().getLayer('payment');
+  return this.getLayerManager().open(paymentScene, function() {
+
+  });
+};
+
 zb.ui.BaseListItem.prototype._renderData = function() {
   var data = this._data === null ? '' : this._data;
   this._container.appendChild(data);
