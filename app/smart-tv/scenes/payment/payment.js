@@ -10,7 +10,8 @@ goog.require('zb.layers.CuteScene');
  */
 SmartTv.scenes.Payment = function() {
 	goog.base(this);
-	this._addContainerClass('s-payment');
+	this._addContainerClass('s-restrict-modal');
+	this._layerName = "payment-restrict";
 };
 goog.inherits(SmartTv.scenes.Payment, zb.layers.CuteScene);
 
