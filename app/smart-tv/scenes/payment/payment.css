@@ -1,6 +1,12 @@
 /* Payment scene
 *******************************/
 
-.s-payment {
 
+.payment-restrict-body .s-restrict-modal{
+	background-image: url('../../img/payed-modal.jpg');
+	background-size: cover;
+	background-position: center;
+}
+.payment-restrict-body .s-restrict-modal h1 {
+	display: none;
 }
