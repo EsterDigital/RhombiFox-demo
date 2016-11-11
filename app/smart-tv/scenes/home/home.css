@@ -64,6 +64,7 @@
   left: 0;
   width: 80%;
   padding: 0 10%;
+  word-wrap: break-word;
   text-transform: uppercase;
   color: #fff;
 }
@@ -75,4 +76,16 @@
   width: 100%;
   height: 100%;
   left: 0;
+}
+.s-home .category-container.category-food{
+  background-image: url('../../img/food-cat.jpg');
+}
+.s-home .category-container.category-recipes{
+  background-image: url('../../img/recipes-cat.jpg');
+}
+.s-home .category-container.category-recommended{
+  background-image: url('../../img/recom-cat.jpg');
+}
+.s-home .category-container.category-noodles{
+  background-image: url('../../img/noodles-cat.jpg');
 }
